@@ -3,24 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
+  <title>Online Streamers on Twitch</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/styles.css" rel="stylesheet">
-<!--
-<script src="../../node_modules/handlebars/dist/handlebars.runtime.js"></script>
-<script src="templates/templates.js"></script>
--->
 </head>
 <body>
 
-  <!-- <div id="templateDemo"></div> -->
+  <div class="container">
+    <div class="row">
+      <header class="col-md-offset-2 col-md-8 col-sm-12">
+        <h2>Twitch streamers</h2>
+        <div class="btn-group btn-group-justified" role="group">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" role="button" id="all-btn">All</button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" role="button" id="online-btn">Online</button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" role="button" id="offline-btn">Offline</button>
+          </div>
+        </div>
+      </header>
 
-  {{> dogs}}
+      <section class="col-md-offset-2 col-md-8 col-sm-12">
+
+      </section>
+    </div>
+  </div>
+
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<!-- <script src="js/bootstrap.js"></script> -->
 <script src="js/main.js"></script>
 </body>
 </html>
