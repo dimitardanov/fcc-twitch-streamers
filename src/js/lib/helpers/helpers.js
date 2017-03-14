@@ -15,8 +15,14 @@ function getLogoURL (data) {
 }
 
 
+function getChannelName (data) {
+  return data.display_name;
+}
+
+
 module.exports = {
   getChannelURL: getChannelURL,
   isStreaming: isStreaming,
-  getLogoURL: getLogoURL
+  getLogoURL: getLogoURL,
+  getChannelName: getChannelName
 };

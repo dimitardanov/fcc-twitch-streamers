@@ -33,4 +33,11 @@ describe('Helper module', function () {
     });
   });
 
+  describe('getChannelName function', function () {
+
+    it('should return the name of the channel', function () {
+      expect(helpers.getChannelName(fixtures.existingChannel)).to.be.equal('FreeCodeCamp');
+    });
+  });
+
 });
