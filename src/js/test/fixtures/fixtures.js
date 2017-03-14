@@ -1,4 +1,4 @@
-var onlineResponse = {
+var onlineStreamResponse = {
     "stream": {
         "_id": 24767276416,
         "game": "StarCraft II",
@@ -60,7 +60,7 @@ var onlineResponse = {
 };
 
 
-var offlineResponse = {
+var offlineStreamResponse = {
     "stream": null,
     "_links": {
         "self": "https://api.twitch.tv/kraken/streams/freecodecamp",
@@ -69,7 +69,52 @@ var offlineResponse = {
 };
 
 
+var existingChannelResponse = {
+    mature: false,
+    status: "JackeL, Let's make a youtube search #programming #Vue #javascript #youtube-api ",
+    broadcaster_language: "en",
+    display_name: "FreeCodeCamp",
+    game: "Creative",
+    language: "en",
+    _id: 79776140,
+    name: "freecodecamp",
+    created_at: "2015-01-14T03:36:47Z",
+    updated_at: "2017-03-14T14:31:55Z",
+    delay: null,
+    logo: "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png",
+    banner: null,
+    video_banner: "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-channel_offline_image-b8e133c78cd51cb0-1920x1080.png",
+    background: null,
+    profile_banner: "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_banner-6f5e3445ff474aec-480.png",
+    profile_banner_background_color: null,
+    partner: false,
+    url: "https://www.twitch.tv/freecodecamp",
+    views: 178282,
+    followers: 10648,
+    _links: {
+        self: "https://api.twitch.tv/kraken/channels/freecodecamp",
+        follows: "https://api.twitch.tv/kraken/channels/freecodecamp/follows",
+        commercial: "https://api.twitch.tv/kraken/channels/freecodecamp/commercial",
+        stream_key: "https://api.twitch.tv/kraken/channels/freecodecamp/stream_key",
+        chat: "https://api.twitch.tv/kraken/chat/freecodecamp",
+        subscriptions: "https://api.twitch.tv/kraken/channels/freecodecamp/subscriptions",
+        editors: "https://api.twitch.tv/kraken/channels/freecodecamp/editors",
+        teams: "https://api.twitch.tv/kraken/channels/freecodecamp/teams",
+        videos: "https://api.twitch.tv/kraken/channels/freecodecamp/videos"
+    }
+};
+
+
+var inexistingChannelResponse = {
+    error: "Not Found",
+    status: 404,
+    message: "Channel 'brunofin' does not exist"
+};
+
+
 module.exports = {
-  onlineResponse: onlineResponse,
-  offlineResponse: offlineResponse
+    onlineStream: onlineStreamResponse,
+    offlineStream: offlineStreamResponse,
+    existingChannel: existingChannelResponse,
+    inexistingChannel: inexistingChannelResponse
 };

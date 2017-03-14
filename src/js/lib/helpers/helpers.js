@@ -1,16 +1,16 @@
 
 
-function createChannelURL (channel) {
-  return 'https://www.twitch.tv/'.concat(channel.toLowerCase());
+function getChannelURL (data) {
+  return data.url;
 }
 
 
-function isChannelOnline (data) {
+function isStreaming (data) {
   return data.stream !== null;
 }
 
 
 module.exports = {
-  createChannelURL: createChannelURL,
-  isChannelOnline: isChannelOnline
+  getChannelURL: getChannelURL,
+  isStreaming: isStreaming
 };
