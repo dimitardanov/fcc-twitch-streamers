@@ -26,4 +26,11 @@ describe('Helper module', function () {
     });
   });
 
+  describe('getLogoURL function', function () {
+
+    it('should return the url of the channel logo', function () {
+      expect(helpers.getLogoURL(fixtures.existingChannel)).to.be.equal("https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png");
+    });
+  });
+
 });

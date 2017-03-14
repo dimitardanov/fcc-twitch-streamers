@@ -10,7 +10,13 @@ function isStreaming (data) {
 }
 
 
+function getLogoURL (data) {
+  return data.logo;
+}
+
+
 module.exports = {
   getChannelURL: getChannelURL,
-  isStreaming: isStreaming
+  isStreaming: isStreaming,
+  getLogoURL: getLogoURL
 };
