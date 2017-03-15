@@ -39,6 +39,16 @@ function getStreamStatusMsg(data) {
 }
 
 
+function createExistingChannelData (data, status) {
+  return {
+    logo: getLogoURL(data),
+    name: getChannelName(data),
+    url: getChannelURL(data),
+    status: status
+  };
+}
+
+
 module.exports = {
   getChannelURL: getChannelURL,
   isStreaming: isStreaming,
@@ -46,5 +56,6 @@ module.exports = {
   getChannelName: getChannelName,
   channelExists: channelExists,
   createTwitchURL: createTwitchURL,
-  getStreamStatusMsg: getStreamStatusMsg
+  getStreamStatusMsg: getStreamStatusMsg,
+  createExistingChannelData: createExistingChannelData
 };

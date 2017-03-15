@@ -73,4 +73,16 @@ describe('Helper module', function () {
     });
   });
 
+  describe('createExistingChannelData function', function () {
+
+    it('should return an object for a channel card', function () {
+      expect(helpers.createExistingChannelData(fixtures.existingChannel, '...')).to.be.deep.equal({
+        logo: "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png",
+        name: "FreeCodeCamp",
+        url: "https://www.twitch.tv/freecodecamp",
+        status: '...'
+      });
+    });
+  });
+
 });
