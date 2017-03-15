@@ -26,7 +26,7 @@ function channelExists (data) {
 
 
 function createTwitchURL(url, route, name) {
-  return [url, route, name.toLowerCase()].join('/');
+  return [url, route, name.toLowerCase()].join('/') + '?callback=?';
 }
 
 
