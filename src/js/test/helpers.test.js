@@ -62,4 +62,15 @@ describe('Helper module', function () {
     });
   });
 
+  describe('getStreamStatusMsg function', function () {
+
+    it('should return channel status if streaming', function () {
+      expect(helpers.getStreamStatusMsg(fixtures.onlineStream)).to.be.equal("RERUN: Stats vs. Dark [PvZ] - Semifinal - IEM Katowice 2017 ");
+    });
+
+    it('should return "Offline" if not streaming', function () {
+      expect(helpers.getStreamStatusMsg(fixtures.offlineStream)).to.be.equal('Offline');
+    });
+  });
+
 });

@@ -30,11 +30,21 @@ function createTwitchURL(url, route, name) {
 }
 
 
+function getStreamStatusMsg(data) {
+  if (isStreaming(data)) {
+    return data.stream.channel.status;
+  } else {
+    return 'Offline';
+  }
+}
+
+
 module.exports = {
   getChannelURL: getChannelURL,
   isStreaming: isStreaming,
   getLogoURL: getLogoURL,
   getChannelName: getChannelName,
   channelExists: channelExists,
-  createTwitchURL: createTwitchURL
+  createTwitchURL: createTwitchURL,
+  getStreamStatusMsg: getStreamStatusMsg
 };
