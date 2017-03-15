@@ -40,4 +40,15 @@ describe('Helper module', function () {
     });
   });
 
+  describe('channelExists function', function () {
+
+    it('should return true if channel exists', function () {
+      expect(helpers.channelExists(fixtures.existingChannel)).to.be.true;
+    });
+
+    it('should return false if channel doesn\'t exist', function () {
+      expect(helpers.channelExists(fixtures.inexistingChannel)).to.be.false;
+    });
+  });
+
 });

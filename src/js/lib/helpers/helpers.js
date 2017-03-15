@@ -20,9 +20,15 @@ function getChannelName (data) {
 }
 
 
+function channelExists (data) {
+  return data.status !== 404 && data.error !== 'Not Found';
+}
+
+
 module.exports = {
   getChannelURL: getChannelURL,
   isStreaming: isStreaming,
   getLogoURL: getLogoURL,
-  getChannelName: getChannelName
+  getChannelName: getChannelName,
+  channelExists: channelExists
 };
