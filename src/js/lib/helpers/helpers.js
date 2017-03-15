@@ -25,10 +25,16 @@ function channelExists (data) {
 }
 
 
+function createTwitchURL(url, route, name) {
+  return [url, route, name.toLowerCase()].join('/');
+}
+
+
 module.exports = {
   getChannelURL: getChannelURL,
   isStreaming: isStreaming,
   getLogoURL: getLogoURL,
   getChannelName: getChannelName,
-  channelExists: channelExists
+  channelExists: channelExists,
+  createTwitchURL: createTwitchURL
 };

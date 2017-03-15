@@ -51,4 +51,15 @@ describe('Helper module', function () {
     });
   });
 
+  describe('createTwitchURL function', function () {
+
+    it('should return a url concatenated from args', function () {
+      expect(helpers.createTwitchURL('https://wind-bow.gomix.me/twitch-api', 'channels', 'freecodecamp')).to.be.equal('https://wind-bow.gomix.me/twitch-api/channels/freecodecamp');
+    });
+
+    it('should switch the name arg to lower case', function () {
+      expect(helpers.createTwitchURL('https://wind-bow.gomix.me/twitch-api', 'streams', 'FreeCodeCamp')).to.be.equal('https://wind-bow.gomix.me/twitch-api/streams/freecodecamp');
+    });
+  });
+
 });
