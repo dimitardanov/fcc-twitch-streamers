@@ -1,0 +1,27 @@
+
+
+
+.media {
+  border-left: 10px;
+  padding: 10px;
+  padding-left: 20px;
+  border-left-style: solid;
+  background-color: $primary-lightest;
+  color: $primary-dark;
+
+  img {
+    width: 50px;
+    border-radius: 10px;
+    border-color: $primary-dark;
+    border-style: solid;
+    border-width: 1px;
+  }
+}
+
+.offline {
+  border-left-color: $offline-color;
+}
+
+.online {
+  border-left-color: $online-color;
+}
