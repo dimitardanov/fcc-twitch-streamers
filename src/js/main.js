@@ -17,6 +17,11 @@ $(function() {
       function (data, status, jqxhr) {
         var channelStatusMsg = helpers.getStreamStatusMsg(data);
         $('#'+ channel + ' .status').text(channelStatusMsg);
+        if (helpers.isStreaming(data)) {
+          $('#' + channel).addClass('online')
+        } else {
+          $('#' + channel).addClass('offline')
+        }
       },
       function (jqxhr, status, error) {console.log(error);}
     );
