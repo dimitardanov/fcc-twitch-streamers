@@ -16,9 +16,17 @@
   img {
     width: 50px;
     border-radius: 10px;
-    border-color: $primary-dark;
+    border-color: $primary-lightest;
     border-style: solid;
     border-width: 1px;
+  }
+
+  img:hover {
+    border-color: $primary-dark;
+  }
+
+  h4 a {
+    color: $primary-dark;
   }
 }
 
