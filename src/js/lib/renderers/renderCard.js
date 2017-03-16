@@ -5,4 +5,12 @@ function renderCard (data, template, $parent) {
 }
 
 
-module.exports = renderCard;
+function prependCard (data, template, $parent) {
+  $parent.prepend(template(data));
+}
+
+
+module.exports = {
+  renderCard: renderCard,
+  prependCard: prependCard
+};

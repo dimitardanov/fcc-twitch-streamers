@@ -4,7 +4,8 @@ $(function() {
   var streamers = require('./lib/data/initialStreamersList.js');
   var twitchCall = require('./lib/ajax/twitch.js');
   var helpers = require('./lib/helpers/helpers.js');
-  var renderCard = require('./lib/renderers/renderCard.js');
+  var renderCard = require('./lib/renderers/renderCard.js').renderCard;
+  var prependCard = require('./lib/renderers/renderCard.js').prependCard;
   var extistingChannelTemplate = require('./lib/templates/existingChannelCard.hbs');
   var inexistingChannelTemplate = require('./lib/templates/inexistingChannelCard.hbs');
   var baseURL = 'https://wind-bow.gomix.me/twitch-api';
@@ -49,11 +50,16 @@ $(function() {
             $channelsList);
           setChannelStatus(channel);
         } else {
-          console.log(channel, ' - does not exist.');
-          renderCard(
+          prependCard(
             {channel: channel},
             inexistingChannelTemplate,
             $channelsList);
+          setTimeout(function () {
+            $('.inexisting-streamer#' + channel)
+              .slideUp(400, function () {
+                $(this).remove();
+              });
+          }, 5000);
         }
       }
     );
