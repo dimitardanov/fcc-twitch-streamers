@@ -14,7 +14,14 @@ $(function() {
   function setChannelStatus(channel) {
     twitchCall(
       helpers.createTwitchURL(baseURL, 'streams', channel),
-      function (data, status, jqxhr) {
+      channelStatusWrapper(channel),
+      function (jqxhr, status, error) {console.log(error);}
+    );
+  }
+
+  function channelStatusWrapper (channel) {
+    return (
+      function channelStatus (data, status, jqxhr) {
         var channelStatusMsg = helpers.getStreamStatusMsg(data);
         $('#'+ channel + ' .status').text(channelStatusMsg);
         if (helpers.isStreaming(data)) {
@@ -22,8 +29,7 @@ $(function() {
         } else {
           $('#' + channel).addClass('offline')
         }
-      },
-      function (jqxhr, status, error) {console.log(error);}
+      }
     );
   }
 
