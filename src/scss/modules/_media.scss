@@ -9,6 +9,10 @@
   background-color: $primary-lightest;
   color: $primary-dark;
 
+  &:first-child {
+    margin-top: 15px;
+  }
+
   img {
     width: 50px;
     border-radius: 10px;
