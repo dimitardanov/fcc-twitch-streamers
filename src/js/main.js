@@ -35,19 +35,21 @@ $(function() {
 
 
   function createChannelCardWrapper (channel) {
-    return (function createChannelCard (data, status, jqxhr) {
-      if (helpers.channelExists(data)) {
-        var channelData = helpers.createExistingChannelData(data);
-        channelData.channel = channel;
-        renderCard(
-          channelData,
-          extistingChannelTemplate,
-          $channelsList)
-        setChannelStatus(channel);
-      } else {
-        console.log(channel, ' - does not exist.');
+    return (
+      function createChannelCard (data, status, jqxhr) {
+        if (helpers.channelExists(data)) {
+          var channelData = helpers.createExistingChannelData(data);
+          channelData.channel = channel;
+          renderCard(
+            channelData,
+            extistingChannelTemplate,
+            $channelsList)
+          setChannelStatus(channel);
+        } else {
+          console.log(channel, ' - does not exist.');
+        }
       }
-    });
+    );
   }
 
 
