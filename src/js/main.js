@@ -9,7 +9,8 @@ $(function() {
   var baseURL = 'https://wind-bow.gomix.me/twitch-api';
 
   var $channelsList = $('section');
-  var $buttons = $('button')
+  var $buttons = $('button');
+  var $search = $('#search');
 
 
   function setChannelStatus(channel) {
@@ -26,9 +27,9 @@ $(function() {
         var channelStatusMsg = helpers.getStreamStatusMsg(data);
         $('#'+ channel + ' .status').text(channelStatusMsg);
         if (helpers.isStreaming(data)) {
-          $('#' + channel).addClass('online')
+          $('#' + channel).addClass('online');
         } else {
-          $('#' + channel).addClass('offline')
+          $('#' + channel).addClass('offline');
         }
       }
     );
@@ -44,7 +45,7 @@ $(function() {
           renderCard(
             channelData,
             extistingChannelTemplate,
-            $channelsList)
+            $channelsList);
           setChannelStatus(channel);
         } else {
           console.log(channel, ' - does not exist.');
@@ -75,6 +76,7 @@ $(function() {
     $buttons.removeClass('active');
     $this.addClass('active');
     var data = $this.data('streamers');
+    $search.data('streamers', data);
     if (data === 'online') {
       $('.media.online').show();
       $('.media.offline').hide();
@@ -84,7 +86,29 @@ $(function() {
     } else {
       $('.media').show();
     }
+    searchStreamers();
   });
+
+  $search.on('keyup', searchStreamers)
+
+  function searchStreamers () {
+    var scope = $search.data('streamers');
+    var pattern = new RegExp($search.val(), 'ig');
+    if (scope == 'online' || scope == 'offline') {
+      var $elements = $('.media.' + scope);
+    } else {
+      var $elements = $('.media');
+    }
+    $elements.each(function (index) {
+      var $this = $(this);
+      var id = $this.attr('id');
+      if (id.search(pattern) == -1) {
+        $this.hide();
+      } else {
+        $this.show();
+      }
+    });
+  }
 
 
 });
