@@ -9,6 +9,9 @@ $(function() {
   var baseURL = 'https://wind-bow.gomix.me/twitch-api';
 
   var $channelsList = $('section');
+  var $allBtn = $('#all-btn');
+  var $onlineBtn = $('#online-btn');
+  var $offlineBtn = $('#offline-btn');
 
 
   function setChannelStatus(channel) {
@@ -67,5 +70,28 @@ $(function() {
   for (var i=0; i<streamers.length; i++) {
     displayChannel(streamers[i]);
   }
+
+  $allBtn.on('click', function () {
+    var $this = $(this);
+    $('button').removeClass('active');
+    $this.addClass('active');
+    $('.media').show();
+  });
+
+  $onlineBtn.on('click', function () {
+    var $this = $(this);
+    $('button').removeClass('active');
+    $this.addClass('active');
+    $('.media.online').show();
+    $('.media.offline').hide();
+  });
+
+  $offlineBtn.on('click', function () {
+    var $this = $(this);
+    $('button').removeClass('active');
+    $this.addClass('active');
+    $('.media.online').hide();
+    $('.media.offline').show();
+  });
 
 });
