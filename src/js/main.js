@@ -6,6 +6,7 @@ $(function() {
   var helpers = require('./lib/helpers/helpers.js');
   var renderCard = require('./lib/renderers/renderCard.js');
   var extistingChannelTemplate = require('./lib/templates/existingChannelCard.hbs');
+  var inexistingChannelTemplate = require('./lib/templates/inexistingChannelCard.hbs');
   var baseURL = 'https://wind-bow.gomix.me/twitch-api';
 
   var $channelsList = $('section');
@@ -49,6 +50,10 @@ $(function() {
           setChannelStatus(channel);
         } else {
           console.log(channel, ' - does not exist.');
+          renderCard(
+            {channel: channel},
+            inexistingChannelTemplate,
+            $channelsList);
         }
       }
     );
